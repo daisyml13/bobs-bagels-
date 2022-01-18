@@ -1,27 +1,54 @@
 const { assertEquals } = require(`./test.framework`);
 const Basket = require(`../src/basket.js`);
 
-// Empty basket
-const testEmptyBasket = () => {
-    //Setup
 
-    //let input = ;
-    let expected = 0;
-    console.log(`Testing that a new basket is empty => ${expected}`);
+const testEmptyBasketHasArray = () => {
 
-    //Execute
-    const basket = new Basket();
-    let actual = basket.items.length;
-
-    //Verify
-    let result = assertEquals(actual, expected);
-    console.log(`testEmptyBasket\n expected = ${expected}\n actual = ${actual}\n assertEquals = ${result}`);
-
+    //Arrange
+    const testBasket = new Basket();
+    const expected = true;
+    //Act
+    const actual = Array.isArray(testBasket.items)
+    //Assert
+    const result = assertEquals(actual, expected);
+    //Report
+    console.log(`testEmptyBasketHasArray result: ${result}`);
 }
 
-// adding an item 
+const testAddingNewItem = () => {
+    //Arrange
+    const testBasket = new Basket();
+    const expected = 1;
+    //Act
+    testBasket.addBagel('bacon');
+    const actual = testBasket.items.length;
+    //Assert
+    const result = assertEquals(actual, expected);
+    //Report
+    console.log(`testAddingNewItem result: ${result}`);
+}
 
-// removing an item 
+const testRemovingItem = () => {
+    //Arrange
+    const testBasket = new Basket();
+    testBasket.addBagel('Salmon');
+    testBasket.addBagel('Cheese');
+    testBasket.addBagel('Chicken Mayo');
+    const expected = 2;
+
+    // console.log(testBasket.items);
+    //Act
+    testBasket.removeBagel('Cheese');
+    const actual = testBasket.items.length;
+    // console.log(testBasket.items);
+    //Assert
+    const result = assertEquals(actual, expected);
+    //Report
+    // console.log(`Actual: ${actual}`)
+    console.log(`testRemovingItem result: ${result}`);
+}
+
+
 
 // changing basket capacity 
 
@@ -41,5 +68,11 @@ const testEmptyBasket = () => {
 
 // remomving a non existing item 
 
+const basketTests = {
+    testEmptyBasketHasArray,
+    testAddingNewItem,
+    testRemovingItem
+}
 
-module.exports = testEmptyBasket;
+
+module.exports = basketTests;

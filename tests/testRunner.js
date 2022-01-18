@@ -1,3 +1,5 @@
-const testEmptyBasket = require(`./basket.tests`);
+const basketTests = require(`./basket.tests`);
 
-testEmptyBasket();
+basketTests.testEmptyBasketHasArray();
+basketTests.testAddingNewItem();
+basketTests.testRemovingItem();
