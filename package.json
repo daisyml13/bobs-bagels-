@@ -1,0 +1,26 @@
+{
+  "name": "bobs-bagels-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daisyml13/bobs-bagels-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daisyml13/bobs-bagels-/issues"
+  },
+  "homepage": "https://github.com/daisyml13/bobs-bagels-#readme",
+  "devDependencies": {
+    "jasmine": "^4.0.2"
+  }
+}
