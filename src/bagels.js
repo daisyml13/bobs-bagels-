@@ -1,6 +1,6 @@
 class Bagels {
 
-    #bagelname;
+    #bagelName;
     #bagelPrice;
     static bagelTypes = [];
 
@@ -16,12 +16,12 @@ class Bagels {
         } catch (err) {
             console.log(err.message);
         }
-
     }
 
-    getBagels() {
-
+    getBagelPrice() {
+        return this.bagelPrice
     }
+
 }
 
 testBagel = new Bagels("Test1");
