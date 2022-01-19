@@ -36,7 +36,14 @@ class Basket {
     }
 
     getTotalPrice() {
-        this.items.reduce()
+        let pricesList = this.items.map(tempBagel => tempBagel.bagelPrice);
+        console.log(`pricesList: ${pricesList}`);
+        const reducer = (previousValue, currentValue) => previousValue + currentValue;
+
+        let totalPrice = pricesList.reduce(reducer);
+        console.log(`totalPrice: ${totalPrice}`);
+        return totalPrice;
+        // this.items.reduce()
     }
 
 }

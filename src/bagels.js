@@ -1,7 +1,7 @@
 class Bagels {
 
     #bagelName;
-    #bagelPrice;
+    bagelPrice;
     static bagelTypes = [];
 
     constructor(bagelName = "", bagelPrice = 4) {
@@ -11,7 +11,7 @@ class Bagels {
                 throw new Error(`Make sure bagelName is string, and bagelPrice is number`);
             }
             this.#bagelName = bagelName;
-            this.#bagelPrice = bagelPrice;
+            this.bagelPrice = bagelPrice;
 
         } catch (err) {
             console.log(err.message);
@@ -19,14 +19,14 @@ class Bagels {
     }
 
     getBagelPrice() {
-        return this.bagelPrice
+        return this.bagelPrice;
     }
 
 }
 
-testBagel = new Bagels("Test1");
-testBagel2 = new Bagels("Test2");
+// testBagel = new Bagels("Test1");
+// testBagel2 = new Bagels("Test2");
 
-console.log(Bagels.bagelTypes);
+// console.log(Bagels.bagelTypes);
 
 module.exports = Bagels;
