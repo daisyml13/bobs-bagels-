@@ -2,7 +2,7 @@ const { assertEquals } = require(`./test.framework`);
 const Basket = require(`../src/basket.js`);
 
 
-const testEmptyBasketHasArray = () => {
+/*const testEmptyBasketHasArray = () => {
 
     //Arrange
     const testBasket = new Basket();
@@ -55,7 +55,7 @@ const basketTests = {
 }
 
 
-module.exports = basketTests;
+module.exports = basketTests;*/
 
 describe('Bobs Bagels Test Suit', () => {
     describe('Basket Tests', () => {
@@ -67,7 +67,7 @@ describe('Bobs Bagels Test Suit', () => {
             const actual = Array.isArray(testBasket.items)
             //Assert 
             expect(actual).toBeTrue();
-        })
-    })
-})
+        });
+    });
+});
 
