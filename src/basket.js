@@ -21,7 +21,6 @@ class Basket {
         } catch (err) {
             console.log(err.message);
         }
-
     }
 
     removeBagel(bagel) {

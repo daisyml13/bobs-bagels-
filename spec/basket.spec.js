@@ -48,26 +48,6 @@ const testRemovingItem = () => {
     console.log(`testRemovingItem result: ${result}`);
 }
 
-
-
-// changing basket capacity 
-
-// checking basket capacity property 
-
-// making order 
-
-// changing an order 
-
-// full basket check 
-
-// item price before adding 
-
-// sum total of basket 
-
-// not allowing an already existig item 
-
-// remomving a non existing item 
-
 const basketTests = {
     testEmptyBasketHasArray,
     testAddingNewItem,
@@ -76,3 +56,18 @@ const basketTests = {
 
 
 module.exports = basketTests;
+
+describe('Bobs Bagels Test Suit', () => {
+    describe('Basket Tests', () => {
+
+        it('Testing Empty Basket Has Array', () => {
+            //Arrange
+            const testBasket = new Basket();
+            //Act
+            const actual = Array.isArray(testBasket.items)
+            //Assert 
+            expect(actual).toBeTrue();
+        })
+    })
+})
+
