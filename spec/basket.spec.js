@@ -13,7 +13,7 @@ const Basket = require(`../src/basket.js`);
     const result = assertEquals(actual, expected);
     //Report
     console.log(`testEmptyBasketHasArray result: ${result}`);
-}
+}*/
 
 const testAddingNewItem = () => {
     //Arrange
@@ -49,13 +49,18 @@ const testRemovingItem = () => {
 }
 
 const basketTests = {
-    testEmptyBasketHasArray,
+    // testEmptyBasketHasArray,
     testAddingNewItem,
     testRemovingItem
 }
 
 
-module.exports = basketTests;*/
+module.exports = basketTests;
+
+class MockBagel {
+    bagelName = 'Salmon';
+    bagelPrice = 300;
+}
 
 describe('Bobs Bagels Test Suit', () => {
     describe('Basket Tests', () => {
@@ -67,6 +72,44 @@ describe('Bobs Bagels Test Suit', () => {
             const actual = Array.isArray(testBasket.items)
             //Assert 
             expect(actual).toBeTrue();
+        });
+        it('Testing Adding Item to empty basket', () => {
+            //Arrange
+            const testBasket = new Basket();
+            let testBagel = new MockBagel();
+            //Act
+            testBasket.addBagel(testBagel);
+            const actual = testBasket.items.length;
+
+            // const actual = Array.isArray(testBasket.items)
+            //Assert 
+            expect(actual).toBe(1);
+        });
+        it('Testing removing Item from basket', () => {
+            //Arrange
+            const testBasket = new Basket();
+            let testBagel = new MockBagel();
+            testBasket.addBagel(testBagel);
+            //Act
+            testBasket.removeBagel(testBagel);
+            const actual = testBasket.items.length;
+
+            // const actual = Array.isArray(testBasket.items)
+            //Assert 
+            expect(actual).toBe(0);
+        });
+        it('Testing removing Item from Empty basket', () => {
+            //Arrange
+            const testBasket = new Basket();
+            let testBagel = new MockBagel();
+            // testBasket.addBagel(testBagel);
+
+            //Act
+            const actual = testBasket.removeBagel(testBagel);
+
+            // const actual = Array.isArray(testBasket.items)
+            //Assert 
+            expect(actual).toBeInstanceOf(Error);
         });
     });
 });

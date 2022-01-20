@@ -31,6 +31,7 @@ class Basket {
             this.items.splice(this.items.indexOf(bagel), 1); //this.items.indexOf(bagel) produces an Int which is the index of the array, splice removes the 
         } catch (err) {
             console.log(err.message);
+            return err;
         }
     }
 
